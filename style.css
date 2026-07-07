@@ -2,89 +2,84 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial;
-    /* font-family: 'Calibri' ; */
-    /* font-family: 'Cambria'; */
-    /* font-family: 'Times New Roman'; */
-    /* font-family: Helvetica; */
+    font-family: "Calibri", sans-serif;
 }
-
-:root{
-    font-size: 14px;
+h1{
+    text-align: center;
+    margin: 2rem 0;
 }
-body,
-.container {
-    min-height: 100vh;
-    background-color: black;
-}
-
 .container {
     display: flex;
+    align-items: stretch;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin: 2rem 2rem;
+    gap: 1rem;
+
 }
 
-/* left */
-.col-left {
+.card {
     flex: 1;
-    background-color: #c5bcbc;
-}
-
-.col-left label {
-    font-size: 1.2rem;
-    display: block;
-}
-
-/* mid */
-.col-mid {
-    flex: 2;
-    padding: 1rem;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    box-shadow: 0 0 10px #ccc;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1 1 calc(25% - 12px);
+    box-sizing: border-box;
+    border-radius: 1rem;
 }
 
-.page {
-    background-color: #fff;
-    width: 55%;
-    aspect-ratio: 466 / 694;
-    padding: 1rem;
-}
-.page h1 {
-    text-align: center;
-}
-
-.page > p {
-    text-align: center;
+.card h3 {
     margin-bottom: 1rem;
 }
 
-.page .contact{
-    margin: .5rem 0;
+.card>ul {
+    margin: 0 0 0.5rem 0rem;
+    width: 100%;
+    color: #525151;
 }
 
-.section{
-    margin-top: 1rem;
+.card ul li {
+    margin: 0 0 0.5rem 1rem;
 }
 
-.section h3{
-    margin-bottom: .2rem;
-}
-/* right */
-.col-right {
-    flex: .5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    background-color: #c5bcbc;
+.card>span {
+    background-color: rgb(38, 38, 226);
+    padding: .5rem;
+    border-radius: .5rem;
+    margin: .5rem 0 0 0;
 }
 
+.card a {
+    color: #FFF;
+    text-decoration: none;
+}
 
 
-@media (max-width : 968px) {
-    .container {
-        flex-direction: column;
+/* 2. Tablets/Smaller Screens: 2 cards in one line */
+@media (max-width: 1200px) {
+    .card {
+        flex: 1 1 calc(50% - 8px);
     }
-    .page{
-        width: 100%;
+}
+
+/* 3. Mobile Screens: 1 card per line (Optional) */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
     }
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:focus-visible {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background-color: #1d1818;
 }
